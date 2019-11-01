@@ -1,0 +1,51 @@
+<div class="topContainer">
+
+<h1>Eat da Burger!</h1>
+
+<div class= "image">
+        <img src="assets/image/Hamburger1.png" class="rounded mx-auto d-block" alt="I'm a burger!">
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <form class="devour-it"> 
+      {{#each bunObject}}
+      {{#unless this.devoured}}
+      <div>
+          <p>{{this.burger_name}}</p>
+          <button type="submit" data-id={{this.id}} class='burgersToEat'>Devour it!</button>
+      </div>
+      {{/unless}}
+      {{/each}}
+        </form>
+    </div>
+  
+
+  <div class="col">
+    {{#each bunObject}}
+    {{#if this.devoured}}
+    <div class='burgersAte'>
+      <div>
+        {{this.burger_name}}
+      </div>
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+</div>
+</div>
+
+
+<div class="rowAdd">
+  <div class="col s12">
+    <form class = "create-form">
+      <div class = "form-group">
+      <input type="text" id="new_burger_name" name="new_burger_name">
+      <button type="submit" id="addBurger">Add Your Burger</button>
+    </form>
+  </div>
+  </div>
+</div>
+</div>
